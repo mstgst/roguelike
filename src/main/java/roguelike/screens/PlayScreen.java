@@ -1,15 +1,20 @@
 package roguelike.screens;
 
-import java.awt.event.KeyEvent;
 import asciiPanel.AsciiPanel;
 
-public class StartScreen implements Screen {
+import java.awt.event.KeyEvent;
+
+public class PlayScreen implements Screen {
     public void screenOutput(AsciiPanel terminal) {
-        terminal.write("roguelike", 1, 1);
-        terminal.writeCenter("-- press [enter] to start --", 22);
+        terminal.write("Let the great experiment begin!", 1, 1);
+        terminal.writeCenter("-- press [escape] to die or [enter] to win --", 22);
     }
 
     public Screen respondToUserInput(KeyEvent key) {
-        return key.getKeyCode() == KeyEvent.VK_ENTER ? new PlayScreen() : this;
+        return switch (key.getKeyCode()) {
+            case KeyEvent.VK_ENTER -> new WinScreen();
+            case KeyEvent.VK_ESCAPE -> new LoseScreen();
+            default -> this;
+        };
     }
 }

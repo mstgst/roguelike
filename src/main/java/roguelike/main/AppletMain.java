@@ -1,4 +1,4 @@
-package roguelike;
+package roguelike.main;
 
 import java.applet.Applet;
 import asciiPanel.AsciiPanel;

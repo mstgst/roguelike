@@ -1,4 +1,4 @@
-package org.example;
+package roguelike.screens;
 
 import java.awt.event.KeyEvent;
 import asciiPanel.AsciiPanel;

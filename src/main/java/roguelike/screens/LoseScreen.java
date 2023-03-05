@@ -4,10 +4,10 @@ import asciiPanel.AsciiPanel;
 
 import java.awt.event.KeyEvent;
 
-public class WinScreen implements Screen {
+public class LoseScreen implements Screen {
     public void screenOutput(AsciiPanel terminal) {
-        terminal.write("You're Winner!", 1, 1);
-        terminal.writeCenter("-- press [enter] to experience samsara, or [escape] to break the cycle --", 22);
+        terminal.write("You have been freed from the mortal coil", 1, 1);
+        terminal.writeCenter("-- press [enter] to start anew, or [escape] to close --", 22);
     }
 
     public Screen respondToUserInput(KeyEvent key) {
